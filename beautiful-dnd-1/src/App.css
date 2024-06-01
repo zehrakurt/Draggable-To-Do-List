@@ -1,3 +1,61 @@
-body{
-    background-color: blue;
+body {
+background-color: #e7d2c1 !important;
+  }
+  .App {
+    text-align: center; 
+    margin-top: 50px; 
+}
+
+  .todoaddbutton.btn {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 70px;
+    border-radius: 10px;
+    background-color: #773738 !important; 
+    box-shadow: 0 5px 5px #541414, 0 9px 0 #393939, 0px 9px 10px rgba(230, 180, 180, 0.4), inset 0px 2px 9px rgba(255,255,255,0.2), inset 0 -2px 9px rgba(190, 155, 155, 0.2);
+    position: relative;
+    border: 1px solid transparent;
+    display: inline-block;
+    text-shadow: 0px -1px 0px rgba(0,0,0,0.2);
+    margin-bottom: 40px;
+    margin-right: 20px;
+    padding-top: 12px;
+    margin-top: 20px;
+  }
+  .todoaddbutton.btn:hover{
+    background-color: #773738 !important;
+    color: #fff;
+    border-color: #773738 !important; 
+    box-shadow: none !important; 
+  }
+.todo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+  }
+  .todo-input {
+    text-align: left;
+  }
+  .todo-button-container {
+    display: flex;
+    justify-content: flex-end; 
+   
+  }
+  .QuoteItem-buttons {
+    display: flex; 
+  }
+ .todo-input{
+    border: 0px;
+    width: 800px;
+    margin-bottom:8px !important;
+    background-color: #feeadf !important;
+  }
+.both-button{
+    background-color: #541414 !important;
+    color: #feeadf;
+    border: #feeadf;
+    border-radius: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
 }
