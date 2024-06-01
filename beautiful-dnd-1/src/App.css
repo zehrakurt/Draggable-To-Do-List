@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Permanent+Marker&display=swap');
+
 body {
 background-color: #e7d2c1 !important;
   }
@@ -59,3 +61,10 @@ background-color: #e7d2c1 !important;
     margin-right: 5px;
     margin-left: 5px;
 }
+label{
+    font-family: "Lobster", sans-serif;
+  font-weight: 800;
+  font-style: bold;
+  font-size: 60px;
+  margin-bottom: 10px;
+  }
