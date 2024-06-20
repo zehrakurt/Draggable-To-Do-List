@@ -97,7 +97,7 @@ function App() {
     setOpen(true);
     setUpdate(content);
     setUpdateId(id);
-  };
+  }
 
   const saveUpdate = () => {
     setQuotes(quotes.map(quote => quote.id === updateId ? { ...quote, content: update } : quote));
