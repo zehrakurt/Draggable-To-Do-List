@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import { DragDropContext, Droppable, Draggable, DropResult } from 'react-beautiful-dnd';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,11 +11,12 @@ import { GrUpdate } from 'react-icons/gr';
 import { Button } from 'react-bootstrap';
 import { CgCloseR } from "react-icons/cg";
 import { TiTick } from "react-icons/ti";
+
 const grid = 8;
 
 const CustomInputGroup = styled(InputGroup)`
   width: 400px; 
-  background: #feeadf ;
+  background: #feeadf;
 `;
 const CustomDiv = styled.div`
   text-align: center;
@@ -29,8 +30,8 @@ const QuoteItem = styled.div`
   padding: ${grid}px;
   border-radius: 10px;
   display: flex;
-  justify-content: space-between; 
-  align-items: center; 
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const Modal = styled.div`
@@ -55,7 +56,6 @@ const Modalbg = styled.div`
 const Area = styled.input`
   padding: 8px;
   width: 300px;
-
 `;
 
 interface Request {
@@ -70,7 +70,7 @@ function App() {
   const [update, setUpdate] = useState('');
   const [updateId, setUpdateId] = useState<string>('');
 
-  const onDragEnd = (result: any) => {
+  const onDragEnd = (result: DropResult) => {
     if (!result.destination) return;
     const TodoContent = Array.from(quotes);
     const [removedTodo] = TodoContent.splice(result.source.index, 1);
@@ -97,7 +97,7 @@ function App() {
     setOpen(true);
     setUpdate(content);
     setUpdateId(id);
-  }
+  };
 
   const saveUpdate = () => {
     setQuotes(quotes.map(quote => quote.id === updateId ? { ...quote, content: update } : quote));
@@ -108,7 +108,7 @@ function App() {
 
   return (
     <div className="App">
-        <div><label htmlFor=""> To Do List</label> </div>
+      <div><label htmlFor=""> To Do List</label> </div>
       <div className="todo-container">
         <CustomDiv>
           <CustomInputGroup>
@@ -119,10 +119,9 @@ function App() {
               aria-label="Default"
               aria-describedby="inputGroup-sizing-default"
             />
-
           </CustomInputGroup>
         </CustomDiv>
-        <Button className='todoaddbutton' onClick={addButton} >Add</Button>
+        <Button className='todoaddbutton' onClick={addButton}>Add</Button>
         <DragDropContext onDragEnd={onDragEnd}>
           <Droppable droppableId="list">
             {(provided) => (
